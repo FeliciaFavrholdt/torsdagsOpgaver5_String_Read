@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import static java.util.Arrays.sort;
@@ -25,7 +26,9 @@ public class Main {
         printWordsOfLength(3);
         printLongestWord();
         printWordsWithLessThanTwoVocals();
-        //printFirstHalfOfEachWord();
+        printFirstHalfOfEachWord();
+        printSecondHalfOfEachWord();
+        printASortedArray();
         printMostFrequentLetter();
         printLessFrequentLetter();
     }
@@ -71,9 +74,9 @@ public class Main {
     private static void printWordsWithLessThanTwoVocals() {
         int vocalsCounter = 0;
 
-        for (String t : text) {
-            for (int i = 0; i < t.length(); i++) {
-                char chars = t.charAt(i);
+        for (String s : text) {
+            for (int i = 0; i < s.length(); i++) {
+                char chars = s.charAt(i);
                 if (chars == 'a' || chars == 'e' || chars == 'i' || chars == 'o' || chars == 'y' || chars == 'æ' || chars == 'ø' || chars == 'å') {
                     vocalsCounter++;
                     // to show that it checks for vocals in the strings
@@ -82,39 +85,51 @@ public class Main {
             }
 
             if (vocalsCounter < 2) {
-                System.out.println("Less than two vocals in this word: " + t);
+                System.out.println("Less than two vocals in this word: " + s);
                 vocalsCounter = 0;
             }
         }
     }
 
-    /*private static void printFirstHalfOfEachWord() {
-        String substring = "";
+    private static void printFirstHalfOfEachWord() {
+        String substringFirst;
 
         for (String s : text) { // for each word in text
-            // prints the substring after index  till index 17
-            substring = substring.length(s);
-            System.out.println("substring = " + substring);
+            substringFirst = s.substring(0, s.length()/2);
+            System.out.println("The first half of: " + s + " is: " + substringFirst);
         }
-    }*/
+    }
 
-    private static void printMostFrequentLetter() {
-        int mostFrequent;
-        int mostFrequentCount;
+    private static void printSecondHalfOfEachWord() {
+     String substringSecond;
 
+        for (String s : text) { // for each word in text
+            substringSecond = s.substring(s.length()/2, s.length());
+            System.out.println("The second half of: " + s + " is: " + substringSecond);
+        }
+    }
+
+    private static void printASortedArray() {
         // sort the array in alphabetical order
         for (String s : text) {
             sort(text);
             System.out.println("this is the text sorted: " + s);
-
-
-            if () {
-
-            }
-
-
         }
     }
+
+    private static void printMostFrequentLetter() {
+     /* char charSize [] = new char[text.length];
+
+      for (String s : text) {
+          for (int i = 0; i < text.length; i++) {
+              charSize[i] = s.charAt(i);
+          }
+          for (char c : charSize) {
+              System.out.println(c);
+          }
+      } */
+    }
+
 
     private static void printLessFrequentLetter() {
 
