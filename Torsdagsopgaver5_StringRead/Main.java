@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -20,7 +21,8 @@ public class Main {
         }
 
         text = inputFromFile.split(" ");  // Creates and array of strings, where each element is a single word from the file.
-        System.out.println(text.length);
+        System.out.println(text.length); //333
+
 
         printWordsStartingWith("Ø");
         printWordsOfLength(3);
@@ -29,8 +31,8 @@ public class Main {
         printFirstHalfOfEachWord();
         printSecondHalfOfEachWord();
         printASortedArray();
-        printMostFrequentLetter();
-        printLessFrequentLetter();
+        //printMostFrequentLetter();
+        //printLessFrequentLetter();
     }
 
     private static void printWordsOfLength(int l) {
@@ -117,18 +119,16 @@ public class Main {
         }
     }
 
-    private static void printMostFrequentLetter() {
-     /* char charSize [] = new char[text.length];
 
-      for (String s : text) {
-          for (int i = 0; i < text.length; i++) {
-              charSize[i] = s.charAt(i);
-          }
-          for (char c : charSize) {
-              System.out.println(c);
-          }
-      } */
+    private static void printMostFrequentLetter() {
+
+
+
+
     }
+
+
+
 
 
     private static void printLessFrequentLetter() {
