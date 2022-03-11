@@ -8,7 +8,7 @@ import static java.util.Arrays.sort;
 
 public class Main {
     static Scanner scan;
-    static String[] text;
+    static String[] text; //words in array
 
     public static void main(String[] args) throws FileNotFoundException {
         File file = new File("data.txt");
@@ -20,9 +20,8 @@ public class Main {
             inputFromFile += scan.nextLine();  // adds each line to the inputFromFile string.
         }
 
-        text = inputFromFile.split(" ");  // Creates and array of strings, where each element is a single word from the file.
+        text = inputFromFile.split(" |\\.");  // Creates and array of strings, where each element is a single word from the file.
         System.out.println(text.length); //333
-
 
         printWordsStartingWith("Ø");
         printWordsOfLength(3);
